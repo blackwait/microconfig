@@ -7,7 +7,7 @@ spring:
 spring:
   profiles: dev
   application:
-    name: microcloud-config-eureka-client-7001
+    name: microcloud-config-eureka-client
   
 server:
   port: 7001
@@ -24,15 +24,17 @@ eureka:
     registerWithEureka: false #不进行注册自己
     fetchRegistry: false  #不通过eureka获取注册信息
     serviceUrl:
-      defaultZone: http://myadmin:123456@eureka-7002.com:7002/eureka,http://myadmin:123456@eureka-7003.com:7003/eureka
-
+      defaultZone: 
+      http://myadmin:123456@eureka-7001.com:7001/eureka
+    instance: # eureak实例定义
+    hostname: eureka-7001.com
     
     
 ---
 spring:
   profiles: test
   application:
-    name: microcloud-config-eureka-client-7001
+    name: microcloud-config-eureka-client
   
 server:
   port: 7002
@@ -49,6 +51,8 @@ eureka:
     registerWithEureka: false #不进行注册自己
     fetchRegistry: false  #不通过eureka获取注册信息
     serviceUrl:
-      defaultZone: http://myadmin:123456@eureka-7002.com:7002/eureka,http://myadmin:123456@eureka-7003.com:7003/eureka
-
+      defaultZone: 
+      http://myadmin:123456@eureka-7001.com:7001/eureka
+    instance: # eureak实例定义
+    hostname: eureka-7001.com 
     

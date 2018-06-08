@@ -10,13 +10,13 @@ server:
   port: 8001
 eureka:
   client:
-    service-url:
-      defaultZone: http://myadmin:123456@eureka-7001.com:7001/eureka,http://myadmin:123456@eureka-7002.com:7002/eureka,http://myadmin:123456@eureka-7003.com:7003/eureka
-  instance:
-    instance-id: dept-8001.com
-    prefer-ip-address: true
-    #lease-renewal-interval-in-seconds: 2 #设置心跳间隔时间 默认30秒
-    #lease-expiration-duration-in-seconds: 5 #如果超过了5秒,则认为该微服务已经宕机
+    registerWithEureka: false #不进行注册自己
+    fetchRegistry: false  #不通过eureka获取注册信息
+    serviceUrl:
+      defaultZone: 
+      http://myadmin:123456@eureka-7001.com:7001/eureka
+    instance: # eureak实例定义
+    hostname: dept-8001.com
 
 security:
   basic: 
@@ -44,7 +44,7 @@ spring:
       max-total: 5
       max-wait-millis: 200
   application:
-    name: microcloud-provider-dept
+    name: microcloud-config-dept-client
 info:
   app.name: microcloud
   company.name: www.yzb.cn
@@ -55,17 +55,17 @@ info:
 ---
  
 server:
-  port: 8001
+  port: 8002
 eureka:
   client:
-    service-url:
-      defaultZone: http://myadmin:123456@eureka-7001.com:7001/eureka,http://myadmin:123456@eureka-7002.com:7002/eureka,http://myadmin:123456@eureka-7003.com:7003/eureka
-  instance:
-    instance-id: dept-8001.com
-    prefer-ip-address: true
-    #lease-renewal-interval-in-seconds: 2 #设置心跳间隔时间 默认30秒
-    #lease-expiration-duration-in-seconds: 5 #如果超过了5秒,则认为该微服务已经宕机
-
+    registerWithEureka: false #不进行注册自己
+    fetchRegistry: false  #不通过eureka获取注册信息
+    serviceUrl:
+      defaultZone: 
+      http://myadmin:123456@eureka-7001.com:7001/eureka
+    instance: # eureak实例定义
+    hostname: dept-8001.com
+  
 security:
   basic: 
     enabled: true #启用springSecurity的安全配置
@@ -92,7 +92,7 @@ spring:
       max-total: 5
       max-wait-millis: 200
   application:
-    name: microcloud-provider-dept
+    name: microcloud-config-dept-client
 info:
   app.name: microcloud
   company.name: www.yzb.cn
