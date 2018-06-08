@@ -1,0 +1,101 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+
+
+
+server:
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://myadmin:123456@eureka-7001.com:7001/eureka,http://myadmin:123456@eureka-7002.com:7002/eureka,http://myadmin:123456@eureka-7003.com:7003/eureka
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true
+    #lease-renewal-interval-in-seconds: 2 #设置心跳间隔时间 默认30秒
+    #lease-expiration-duration-in-seconds: 5 #如果超过了5秒,则认为该微服务已经宕机
+
+security:
+  basic: 
+    enabled: true #启用springSecurity的安全配置
+  user:
+    name: myadmin
+    password: 123456
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.yzb.vo
+  config-location: classpath:mybatis/mybatis.cfg.xml
+spring:
+  profiles: dev
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud8001
+    username: root
+    password: 123456
+    filters: stat,wall,log4j
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+  application:
+    name: microcloud-provider-dept
+info:
+  app.name: microcloud
+  company.name: www.yzb.cn
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  
+  
+---
+ 
+server:
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://myadmin:123456@eureka-7001.com:7001/eureka,http://myadmin:123456@eureka-7002.com:7002/eureka,http://myadmin:123456@eureka-7003.com:7003/eureka
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true
+    #lease-renewal-interval-in-seconds: 2 #设置心跳间隔时间 默认30秒
+    #lease-expiration-duration-in-seconds: 5 #如果超过了5秒,则认为该微服务已经宕机
+
+security:
+  basic: 
+    enabled: true #启用springSecurity的安全配置
+  user:
+    name: myadmin
+    password: 123456
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.yzb.vo
+  config-location: classpath:mybatis/mybatis.cfg.xml
+spring:
+  profiles: test
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud8001
+    username: root
+    password: 123456
+    filters: stat,wall,log4j
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+  application:
+    name: microcloud-provider-dept
+info:
+  app.name: microcloud
+  company.name: www.yzb.cn
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  

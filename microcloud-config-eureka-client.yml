@@ -1,0 +1,57 @@
+spring:
+  profiles:
+    active: 
+    - dev
+
+---
+spring:
+  profiles: dev
+  application:
+    name: microcloud-config-eureka-client-7001
+  
+server:
+  port: 7001
+  
+security:
+  basic: 
+    enabled: true #启用springSecurity的安全配置
+  user:
+    name: myadmin
+    password: 123456
+
+eureka:
+  client:
+    registerWithEureka: false #不进行注册自己
+    fetchRegistry: false  #不通过eureka获取注册信息
+    serviceUrl:
+      defaultZone: http://myadmin:123456@eureka-7002.com:7002/eureka,http://myadmin:123456@eureka-7003.com:7003/eureka
+  instance:
+    hostname: eureka-7001.com
+    
+    
+---
+spring:
+  profiles: test
+  application:
+    name: microcloud-config-eureka-client-7001
+  
+server:
+  port: 7001
+  
+security:
+  basic: 
+    enabled: true #启用springSecurity的安全配置
+  user:
+    name: myadmin
+    password: 123456
+
+eureka:
+  client:
+    registerWithEureka: false #不进行注册自己
+    fetchRegistry: false  #不通过eureka获取注册信息
+    serviceUrl:
+      defaultZone: http://myadmin:123456@eureka-7002.com:7002/eureka,http://myadmin:123456@eureka-7003.com:7003/eureka
+  instance:
+    hostname: eureka-7001.com
+    
+    
