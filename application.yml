@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: 
+    - dev
+
+---
+spring:
+  profiles: dev
+  application:
+    name: microcloud-test-dev
+  
+---
+spring:
+  profiles: defalut
+  application:
+    name: microcloud-test-default
+  
