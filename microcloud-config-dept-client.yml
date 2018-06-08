@@ -11,8 +11,6 @@ eureka:
   instance:
       hostname: dept-8001.com
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
       defaultZone: 
         http://myadmin:123456@eureka-7001.com:7001/eureka
@@ -59,8 +57,6 @@ eureka:
   instance:
       hostname: dept-8001.com
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
       defaultZone: 
         http://myadmin:123456@eureka-7001.com:7001/eureka
