@@ -11,9 +11,8 @@ eureka:
   instance:
       hostname: dept-8001.com
   client:
-    serviceUrl:
-      defaultZone: 
-        http://myadmin:123456@eureka-7301.com:7301/eureka
+    service-url:
+      defaultZone: http://myadmin:123456@eureka-config.com:7301/eureka
 
 security:
   basic: 
@@ -57,9 +56,8 @@ eureka:
   instance:
       hostname: dept-8002.com
   client:
-    serviceUrl:
-      defaultZone: 
-        http://myadmin:123456@eureka-7301.com:7301/eureka
+    service-url:
+      defaultZone: http://myadmin:123456@eureka-config.com:7301/eureka
   
   
 security:
