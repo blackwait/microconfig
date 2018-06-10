@@ -13,7 +13,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: 
-        http://myadmin:123456@eureka-7001.com:7001/eureka
+        http://myadmin:123456@eureka-7301.com:7301/eureka
 
 security:
   basic: 
@@ -55,11 +55,11 @@ server:
   port: 8002
 eureka:
   instance:
-      hostname: dept-8001.com
+      hostname: dept-8002.com
   client:
     serviceUrl:
       defaultZone: 
-        http://myadmin:123456@eureka-7001.com:7001/eureka
+        http://myadmin:123456@eureka-7301.com:7301/eureka
   
   
 security:
