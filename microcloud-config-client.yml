@@ -30,6 +30,6 @@ eureka:
     service-url:
       defaultZone: http://myadmin:123456@eureka-config.com:7301/eureka
 info:
-  app.name: yzb-microcloud-test-11111
-  company.name: www.yzb.cn1111
-  app.version: v-test-1.0.0111
+  app.name: yzb-microcloud-test-111112222222
+  company.name: www.yzb.cn1111222222
+  app.version: v-test-1.0.0111222222
