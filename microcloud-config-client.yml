@@ -15,7 +15,7 @@ eureka:
       defaultZone: http://myadmin:123456@eureka-config.com:7301/eureka
 info:
   app.name: yzb-microcloud-dev-1
-  company.name: www.yzb.cn
+  company.name: www.yzb.cn_update
   app.version: v-dev-1.0.0
 
 ---
