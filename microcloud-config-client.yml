@@ -1,7 +1,7 @@
 spring:
   profiles:
     active:
-    - dev
+    - test
 ---
 server:
   port: 8201
@@ -15,14 +15,14 @@ eureka:
       defaultZone: http://myadmin:123456@eureka-config.com:7301/eureka
 info:
   app.name: yzb-microcloud-dev-1
-  company.name: www.yzb.cn_update111
+  company.name: www.yzb.cn
   app.version: v-dev-1.0.0
 
 ---
 server:
   port: 8102
 spring:
-  profiles: beta
+  profiles: test
   application: 
     name: microcloud-config-client
 eureka: 
@@ -32,4 +32,4 @@ eureka:
 info:
   app.name: yzb-microcloud-test-1
   company.name: www.yzb.cn
-  app.version: v-beta-1.0.0
+  app.version: v-test-1.0.0
