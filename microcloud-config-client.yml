@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8201
+spring:
+  profiles: dev
+  application: 
+    name: microcloud-config-client
+eureka: 
+  client:
+    service-url:
+      defaultZone: http://myadmin:123456@eureka-config.com:7301/eureka
+info:
+  app.name: yzb-microcloud-dev-1
+  company.name: www.yzb.cn
+  app.version: v-dev-1.0.0
+
+---
+server:
+  port: 8102
+spring:
+  profiles: beta
+  application: 
+    name: microcloud-config-client
+eureka: 
+  client:
+    service-url:
+      defaultZone: http://myadmin:123456@eureka-config.com:7301/eureka
+info:
+  app.name: yzb-microcloud-test-1
+  company.name: www.yzb.cn
+  app.version: v-beta-1.0.0
